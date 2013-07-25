@@ -1,0 +1,11 @@
+{
+	"name": "ValtechProjetX", 
+	"description": "A sample Node.js + Neo4j app.", 
+	"version": "0.0.1", 
+	"dependencies": { 
+		"express": "~3.2.0", 
+		"jade": "~0.26.3", 
+		"neo4j": "~0.2.20",
+		"socket.io": "~0.9.16"
+  	}
+}
