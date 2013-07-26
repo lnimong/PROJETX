@@ -1,10 +1,17 @@
-define(function () {
+define([
+	'socketio'
+], function (socketio) {
   'use strict';
 
   function SuggestionSrv ($rootScope) {
-    function publishSuggestedProducts (products) {
-      $rootScope.$broadcoast('suggestionSrv:suggestedProducts', products);
-    }
+  	var socket = socketio.connect().socket;
+
+  	this.start = function () {
+  		socket.of('suggestions').on('products', function (products) {
+  			$rootScope.$broadcast('suggestionSrv:suggestedProducts', products);
+  			$rootScope.$apply();
+  		});
+  	}
   }
 
   SuggestionSrv.$inject = [ '$rootScope' ];
