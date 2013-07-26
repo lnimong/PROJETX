@@ -7,3 +7,7 @@ exports.all = function(req, res){
 exports.product = function(req, res){
     res.send(productRepository.getProduct(req.id));
 };
+
+exports.suggestions = function(req, res){
+    res.send(productRepository.getSuggestions());
+};
