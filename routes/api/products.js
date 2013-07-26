@@ -1,11 +1,11 @@
 
 exports.all = function(req, res){
     res.send(
-    	[{ "t-shirt bleu", "http://g-ecx.images-amazon.com/images/G/08/apparel/rcxgs/tile._V211468500_.gif", 50, 1}, 
-    	{ "pantalon", "http://g-ecx.images-amazon.com/images/G/08/apparel/rcxgs/tile._V211468500_.gif", 50, 2}, 
-    	{ "chaussure marron", "http://g-ecx.images-amazon.com/images/G/08/apparel/rcxgs/tile._V211468500_.gif", 33.5, 3}]);
+    	[ {'product':{  'name':'t-shirt bleu', 'urlImage':'http://g-ecx.images-amazon.com/images/G/08/apparel/rcxgs/tile._V211468500_.gif', 'price':50, 'id':1} }, 
+    	{'product':{ 'name':'pantalon', 'urlImage':'http://g-ecx.images-amazon.com/images/G/08/apparel/rcxgs/tile._V211468500_.gif', 'price':50, 'id':2}}, 
+    	{'product':{ 'name':'chaussure marron', 'urlImage':'http://g-ecx.images-amazon.com/images/G/08/apparel/rcxgs/tile._V211468500_.gif', 'price':33.5, 'id':3}}]);
 };
 
 exports.product = function(req, res){
-    res.send({ 't-shirt bleu", "http://g-ecx.images-amazon.com/images/G/08/apparel/rcxgs/tile._V211468500_.gif', 50, 1, 'L'});
+    res.send({'product':{ 'name':'t-shirt bleu', 'urlImage':'http://g-ecx.images-amazon.com/images/G/08/apparel/rcxgs/tile._V211468500_.gif', 'price':50, 'id':1, 'sizes':['M','L', 'XL']}});
 };
