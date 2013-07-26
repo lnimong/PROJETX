@@ -1,3 +1,7 @@
+START product=node(*)
+MATCH (product)-[:DE_MODELE]->()
+RETURN product.name as name, product.description as description, 
+product.price as price, product.imageUrl as imageUrl
 
 
 START product=node:node_auto_index(name='T-Shirt') 
