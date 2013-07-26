@@ -8,7 +8,10 @@ exports.all = function(req, res){
 };
 
 exports.product = function(req, res){
-    res.send(productRepository.getProduct(req.id));
+    productRepository.getProduct(req.params.id, function (err, data)
+	{
+		res.send(data);
+	});
 };
 
 exports.suggestions = function(req, res){
