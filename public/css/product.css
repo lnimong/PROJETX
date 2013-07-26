@@ -1,0 +1,21 @@
+.product .size {
+  line-height: 20px;
+  margin: 0 .5em;
+}
+
+.product .size input[type="radio"] {
+  
+  margin: 0;
+}
+
+.product .size:first-child {
+  margin-left: 0;
+}
+
+.product .size:last-child {
+  margin-right: 0;
+}
+
+.product form .btn {
+  margin-top: 1em;
+}

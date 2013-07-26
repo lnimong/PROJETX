@@ -9,7 +9,32 @@
         <%- stylesheets %>
     </head>
     <body>
-        <%- body %>
+        <div class="navbar navbar-inverse navbar-fixed-top">
+            <div class="navbar-inner">
+                <div class="container">
+                    <a class="btn btn-navbar" ng-init="isNavBarCollapsed = true" ng-click="isNavBarCollapsed = !isNavBarCollapsed">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </a>
+                     
+                    <a class="brand" href="/">PROJETX</a>
+
+                    <div class="nav-collapse collapse" collapse="isNavBarCollapsed">
+                        <ul class="nav">
+                            <li class="active"><a href="#">Home</a></li>
+                        </ul>
+                    </div><!--/.nav-collapse -->
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="content">
+                <%- body %>
+            </div>
+        </div>
+
         <%- scripts %>
     </body>
 </html>

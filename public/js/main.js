@@ -3,12 +3,20 @@ require.config({
     'partials': '../partials',
     'text': '../components/requirejs-text/text',
     'jquery': '../components/jquery/jquery',
-    'angular': '../components/angular-unstable/angular'
+    'angular': '../components/angular-unstable/angular',
+    'angular-ui-bootstrap-transition': '../components/angular-ui-bootstrap/src/transition/transition',
+    'angular-ui-bootstrap-collapse': '../components/angular-ui-bootstrap/src/collapse/collapse'
   },
   shim: {
     angular: {
       deps: [ 'jquery' ], // replace jqLite by jquery
       exports: 'angular'
+    },
+    'angular-ui-bootstrap-transition': {
+      deps: [ 'angular' ]
+    },
+    'angular-ui-bootstrap-collapse': {
+      deps: [ 'angular-ui-bootstrap-transition' ]
     }
   },
   packages: [

@@ -1,3 +1,14 @@
 @import url("../components/bootstrap/docs/assets/css/bootstrap.css");
 @import url("../components/bootstrap/docs/assets/css/bootstrap-responsive.css");
 @import url("./catalog.css");
+@import url("./product.css");
+
+/* layout */
+
+body, html {
+  height: 100%;
+}
+
+.content {
+  padding: 44px 0 60px 0;
+}
