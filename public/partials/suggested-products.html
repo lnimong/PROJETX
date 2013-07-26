@@ -1,0 +1,11 @@
+<div class="row-fluid" ng-controller="SuggestedProductsCtrl">
+  <div ng-repeat="product in products" class="span2">
+    <a href="/product/{{ product.id }}">
+      <img ng-src="{{ product.imageUrl }}" />
+    </a>
+    <div>
+      <div>{{ product.name }}</div>
+      <div>{{ product.price }} €</div>
+    </div>
+  </div>
+</div>

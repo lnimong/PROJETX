@@ -1,29 +1,33 @@
-<div class="row-fluid product">
-  <div class="span4">
-    <img ng-src="{{ product.imageUrl }}" alt="{{ product.name }}" />
-  </div>
+<div>
+  <div ng-include="'partials/suggested-products.html'"></div>
 
-  <div class="span8">
-    <h2>
-      {{ product.name }}
-    </h2>
-    <p>
-      {{ product.description }}
-    </p>
-    <p>
-      Prix : {{ product.price }} €
-    </p>
-    <form name="productForm" ng-submit="addToCart()">
-      <div>
-        Taille :
-        <span class="badge size" ng-repeat="size in product.sizes">
-          <input type="radio"
-                 name="sizeInput"
-                 ng-model="$parent.selectedSize"
-                 value="{{ size }}" /> {{ size }}
-        </span>
-      </div>
-      <input type="submit" class="btn btn-primary" value="Ajouter" />
-    </form>
+  <div class="row-fluid product">
+    <div class="span4">
+      <img ng-src="{{ product.imageUrl }}" alt="{{ product.name }}" />
+    </div>
+
+    <div class="span8">
+      <h2>
+        {{ product.name }}
+      </h2>
+      <p>
+        {{ product.description }}
+      </p>
+      <p>
+        Prix : {{ product.price }} €
+      </p>
+      <form name="productForm" ng-submit="addToCart()">
+        <div>
+          Taille :
+          <span class="badge size" ng-repeat="size in product.sizes">
+            <input type="radio"
+                   name="sizeInput"
+                   ng-model="$parent.selectedSize"
+                   value="{{ size }}" /> {{ size }}
+          </span>
+        </div>
+        <input type="submit" class="btn btn-primary" value="Ajouter" />
+      </form>
+    </div>
   </div>
 </div>

@@ -1,13 +1,16 @@
 define([
   'angular',
   './product-srv',
-  './cart-srv'
+  './cart-srv',
+  './suggestion-srv'
 ], function (angular,
              ProductSrv,
-             CartSrv) {
+             CartSrv,
+             SuggestionSrv) {
   'use strict';
 
   return angular.module('projectX.services', [])
                 .service('productSrv', ProductSrv)
-                .service('cartSrv', CartSrv);
+                .service('cartSrv', CartSrv)
+                .service('suggestionSrv', SuggestionSrv);
 });
