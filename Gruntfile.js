@@ -8,7 +8,7 @@ module.exports = function(grunt) {
         options: {
           file: 'server.js',
           watchedExtensions: [ 'js' ],
-          watchedFolders: [ 'routes' ],
+          watchedFolders: [ 'routes', 'domain' ],
           debug: true,
           delayTime: 1,
           env: {
