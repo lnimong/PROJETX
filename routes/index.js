@@ -11,6 +11,7 @@ exports.register = function (app) {
   /* api */
   app.get('/api/products/', products.all);
   app.get('/api/products/:id', products.product);
+  app.get('/api/products/:id/suggest', products.suggestions);
 
   app.post('/api/cart/', cart.addToCart);
 };
