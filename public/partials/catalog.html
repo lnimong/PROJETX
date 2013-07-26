@@ -1,1 +1,15 @@
-catalog
+
+<div id="cataloglist" class="row-fluid">
+
+
+    <div  ng-repeat="item in products" style=""  class="product span2">
+        <div class="desc-img" >
+            <a href="/product/{{item.product.id}}"><img src="{{item.product.imageUrl}}" data-bind="attr:{src:Cover}"></a>
+        </div>
+        <div class="details" style="">
+            <div class="name">{{item.product.name}}</div>
+            <div class="price">{{item.product.price}}€</div>
+        <div> 
+    </div>
+
+</div>

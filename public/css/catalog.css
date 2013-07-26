@@ -1,0 +1,15 @@
+div#cataloglist div.product  {
+	margin:4px
+}
+
+div.product img {
+	border:1px solid #eee
+}
+
+div.product .details {
+	width:100%; background:#eee; border : 1px solid #eee
+}
+
+div#cataloglist {
+	margin: 2em
+}
