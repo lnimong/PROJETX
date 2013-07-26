@@ -2,7 +2,7 @@ var neo4j = require('neo4j');
 var db = new neo4j.GraphDatabase('http://localhost:7474');
 
 	exports.getAllProducts = function (onResults) {
-            db.query('START product=node(*) MATCH (product)-[:DE_MODELE]->() RETURN product.name as name, product.description as description, product.price as price, product.imageUrl as imageUrl', {}, onResults);
+            db.query('START product=node(*) MATCH (product)-[:DE_MODELE]->() RETURN DISTINCT product.id as id, product.name as name, product.description as description, product.price as price, product.imageUrl as imageUrl', {}, onResults);
 	};
 
 	exports.getProduct = function (id) {
