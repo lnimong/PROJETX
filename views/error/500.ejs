@@ -1,0 +1,10 @@
+<% layout('./layout') -%>
+
+<p>
+  <%= error.message %><br />
+  <a href="/">homepage</a>.
+</p>
+
+<% if (settings['verbose errors']) { %>
+  <pre><%= error.stack %></pre>
+<% } %>

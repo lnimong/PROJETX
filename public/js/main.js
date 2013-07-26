@@ -13,6 +13,7 @@ require.config({
   },
   packages: [
     'controllers',
+    'services',
     'templates'
   ]
 });

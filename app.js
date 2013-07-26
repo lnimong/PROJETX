@@ -26,11 +26,15 @@ app.configure(function () {
 app.configure('development', function () {
   app.use(express.static(__dirname + '/public'));
   app.use(express.errorHandler({ dumpExceptions: true, showStack: true }));
+
+  app.enable('verbose errors');
 });
 
 app.configure('production', function () {
   app.use(express.static(__dirname + '/public-build'));
   app.use(express.errorHandler());
+
+  app.disable('verbose errors');
 });
 
 
