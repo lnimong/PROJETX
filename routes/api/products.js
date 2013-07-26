@@ -1,7 +1,10 @@
 var productRepository = require('../../domain/repository/productRepository');
 
 exports.all = function(req, res){
-    res.send(productRepository.getAllProducts());
+    productRepository.getAllProducts(function (err, data)
+    	{
+    		res.send(data);
+    	});
 };
 
 exports.product = function(req, res){
