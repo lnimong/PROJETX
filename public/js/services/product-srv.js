@@ -8,7 +8,7 @@ define(function () {
       $http
         .get('/api/products/' + id)
         .success(function (data, status) {
-          deferred.resolve(data.product);
+          deferred.resolve(data);
         })
         .error(function (data, status) {
           deferred.reject(status);
