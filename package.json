@@ -1,11 +1,23 @@
 {
-	"name": "ValtechProjetX", 
-	"description": "A sample Node.js + Neo4j app.", 
-	"version": "0.0.1", 
-	"dependencies": { 
-		"express": "~3.2.0", 
-		"jade": "~0.26.3", 
-		"neo4j": "~0.2.20",
-		"socket.io": "~0.9.16"
-  	}
+  "name": "projetx",
+  "description": "A sample Node.js + Neo4j app.",
+  "version": "0.0.1",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "~3.2.0",
+    "neo4j": "~0.2.20",
+    "socket.io": "~0.9.16",
+    "ejs-locals": "~1.0.2",
+    "ejs": "~0.8.4"
+  },
+  "devDependencies": {
+    "grunt": "~0.4.1",
+    "grunt-nodemon": "0.0.8",
+    "grunt-contrib-watch": "~0.5.1",
+    "grunt-concurrent": "~0.3.0"
+  }
 }
