@@ -1,0 +1,11 @@
+{
+  "name": "PROJETX",
+  "version": "0.0.0",
+  "dependencies": {
+    "angular-unstable": "~1.1.5",
+    "jquery": "~2.0.3",
+    "bootstrap": "~2.3.2",
+    "requirejs": "~2.1.8",
+    "requirejs-text": "~2.0.9"
+  }
+}
