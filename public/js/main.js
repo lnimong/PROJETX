@@ -1,6 +1,7 @@
 require.config({
   paths: {
     'partials': '../partials',
+    //'socketio': '/socket.io/socket.io',
     'text': '../components/requirejs-text/text',
     'jquery': '../components/jquery/jquery',
     'angular': '../components/angular-unstable/angular',
