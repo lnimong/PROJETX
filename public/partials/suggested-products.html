@@ -2,7 +2,8 @@
      ng-controller="SuggestedProductsCtrl"
      ng-show="productGroups.length"
      ng-animate="{ show: 'show-animation', hide: 'hide-animation' }"
-     ng-class="{ visible: isLoaded }">
+     ng-class="{ visible: canBeVisible }">
+  <h3>Recommandations</h3>
   <carousel interval="interval">
     <slide ng-repeat="productGroup in productGroups" active="productGroup.active">
       <div class="product" ng-repeat="product in productGroup.products">

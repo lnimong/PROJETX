@@ -1,40 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <title>PROJETX - <%= title  %></title>
-        <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
-        <meta charset="utf-8">
-        <base href="/">
-        <link rel="stylesheet" href="/css/main.css">
-        <%- stylesheets %>
-    </head>
-    <body>
-        <div class="navbar navbar-inverse navbar-fixed-top">
-            <div class="navbar-inner">
-                <div class="container">
-                    <a class="btn btn-navbar" ng-init="isNavBarCollapsed = true" ng-click="isNavBarCollapsed = !isNavBarCollapsed">
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </a>
-                     
-                    <a class="brand" href="/">PROJETX</a>
-
-                    <div class="nav-collapse collapse" collapse="isNavBarCollapsed">
-                        <ul class="nav">
-                            <li class="active"><a href="#">Home</a></li>
-                        </ul>
-                    </div><!--/.nav-collapse -->
-                </div>
-            </div>
-        </div>
-
+  <head>
+    <title>PROJETX - <%= title  %></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
+    <meta charset="utf-8">
+    <base href="/">
+    <link rel="stylesheet" href="/css/main.css">
+    <%- stylesheets %>
+  </head>
+  <body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+      <div class="navbar-inner">
         <div class="container">
-            <div class="content">
-                <%- body %>
-            </div>
-        </div>
+          <a class="btn btn-navbar" ng-init="isNavBarCollapsed = true" ng-click="isNavBarCollapsed = !isNavBarCollapsed">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </a>
+           
+          <a class="brand" href="/">PROJETX</a>
 
-        <%- scripts %>
-    </body>
+          <div class="nav-collapse collapse" collapse="isNavBarCollapsed">
+            <div ng-include="'partials/notifications.html'"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="content">
+        <%- body %>
+      </div>
+    </div>
+
+    <%- scripts %>
+  </body>
 </html>

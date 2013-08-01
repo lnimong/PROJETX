@@ -1,15 +1,9 @@
-div#cataloglist div.product  {
-	margin:4px
+.catalog .product {
+	margin: 0 5px;
 }
 
-div.product img {
-	border:1px solid #eee
-}
-
-div.product .details {
-	width:100%; background:#eee; border : 1px solid #eee
-}
-
-div#cataloglist {
-	margin: 2em
+.catalog .product .details {
+	background-color: #eee;
+  border: 1px solid #eee;
+  width: 100%; 
 }

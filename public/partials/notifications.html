@@ -1,0 +1,17 @@
+<div class="pull-right notifications" ng-controller="NotificationsCtrl">
+  <div class="dropdown" ng-init="isOpen = false">
+    <button class="btn dropdown-toggle" ng-class="{ active: isOpen }" ng-click="isOpen = !isOpen">
+      <div class="badge">{{ notifications.length }}</div>
+      <i class="icon-align-left"></i>
+    </button>
+    <ul class="dropdown-menu">
+      <li ng-repeat="notification in notification">
+        <a href="#">
+          <div>
+            {{ notification.name }}
+          </div>
+        </a>
+      </li>
+    </ul>
+  </div>
+</div>
