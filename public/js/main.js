@@ -5,8 +5,10 @@ require.config({
     'text': '../components/requirejs-text/text',
     'jquery': '../components/jquery/jquery',
     'angular': '../components/angular-unstable/angular',
+    'angular-ui-bootstrap-template': '../components/angular-ui-bootstrap/template',
     'angular-ui-bootstrap-transition': '../components/angular-ui-bootstrap/src/transition/transition',
-    'angular-ui-bootstrap-collapse': '../components/angular-ui-bootstrap/src/collapse/collapse'
+    'angular-ui-bootstrap-collapse': '../components/angular-ui-bootstrap/src/collapse/collapse',
+    'angular-ui-bootstrap-carousel': '../components/angular-ui-bootstrap/src/carousel/carousel'
   },
   shim: {
     angular: {
@@ -17,6 +19,9 @@ require.config({
       deps: [ 'angular' ]
     },
     'angular-ui-bootstrap-collapse': {
+      deps: [ 'angular-ui-bootstrap-transition' ]
+    },
+    'angular-ui-bootstrap-carousel': {
       deps: [ 'angular-ui-bootstrap-transition' ]
     }
   },
