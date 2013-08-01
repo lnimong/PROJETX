@@ -1,24 +1,17 @@
 define(function () {
   'use strict';
 
-  function CartSrv ($http, $q) {
+  function CartSrv ($http) {
     this.addToCart = function (product, size) {
-      var deferred = $q.defer();
-
-      $http
+      return $http
         .post('/api/cart', { id: product.id, size: size })
-        .success(function (data, status) {
-          deferred.resolve();
-        })
         .error(function (data, status) {
           deferred.reject(status);
         });
-
-      return deferred.promise;
     };
   }
 
-  CartSrv.$inject = [ '$http', '$q' ];
+  CartSrv.$inject = [ '$http' ];
 
   return CartSrv;
 });

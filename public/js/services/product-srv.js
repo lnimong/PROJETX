@@ -1,35 +1,32 @@
 define(function () {
   'use strict';
 
-  function ProductSrv ($http, $q) {
+  function ProductSrv ($window, $http) {
+
     this.getProduct = function (id) {
-      var deferred = $q.defer();
-
-      $http
+      return $http
         .get('/api/products/' + id)
-        .success(function (data, status) {
-          deferred.resolve(data);
+        .error(function (data, status, headers, config) {
+          $window.alert('Oups: ' + status);
         })
-        .error(function (data, status) {
-          deferred.reject(status);
+        .then(function (response) {
+          return response.data[0];
         });
-
-      return deferred.promise;
     };
 
-    this.getProducts = function (callback) {
-      $http
+    this.getProducts = function () {
+      return $http
         .get('/api/products/')
-        .success(function (data, status, headers, config) {
-          callback(data);
-        })
         .error(function (data, status, headers, config) {
-
+          $window.alert('Oups: ' + status);
+        })
+        .then(function (response) {
+          return response.data;
         });
-  	};
+    };
 	}
 
-  ProductSrv.$inject = [ '$http', '$q' ];
+  ProductSrv.$inject = [ '$window', '$http' ];
 
   return ProductSrv;
 });

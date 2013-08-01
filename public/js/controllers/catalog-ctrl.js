@@ -2,9 +2,7 @@ define(function () {
   'use strict';
 
   function CatalogCtrl ($scope, productSrv) {
-  		productSrv.getProducts(function(products) {
-  			$scope.products = products;
-  		})		
+    $scope.products = productSrv.getProducts();
   }
 
   CatalogCtrl.$inject = [ '$scope', 'productSrv' ];

@@ -2,15 +2,7 @@ define(function () {
   'use strict';
 
   function ProductCtrl ($scope, $routeParams, productSrv, cartSrv) {
-    function loadProduct (id) {
-      productSrv.getProduct(id).then(function (product) {
-        $scope.product = product;
-      }, function (error) {
-        // TODO: handle error
-      });
-    }
-
-    $scope.product = null;
+    $scope.product = productSrv.getProduct($routeParams.id);
     $scope.selectedSize = null;
 
     $scope.$watch('product', function (newProduct, oldProduct) {
@@ -24,14 +16,8 @@ define(function () {
         return;
       }
 
-      cartSrv.addToCart($scope.product, $scope.selectedSize).then(function () {
-        // ok
-      }, function (error) {
-        // TODO: handle error
-      });
+      cartSrv.addToCart($scope.product.$$v, $scope.selectedSize);
     };
-
-    loadProduct($routeParams.id);
   }
 
   ProductCtrl.$inject = [ '$scope', '$routeParams', 'productSrv', 'cartSrv' ];
