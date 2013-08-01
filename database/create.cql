@@ -49,7 +49,7 @@ CREATE
 (jupe_model1)-[:DE_TAILLE]->(T_38),
 (jupe_model1)-[:DE_TAILLE]->(T_39),
 (jupe_model1)-[:DE_COULEUR]->(marron),
-(jupe_model1)-[:DE_MARQUE]->(tommy),
+(jupe)-[:DE_MARQUE]->(tommy),
 (jupe)-[:DE_MODELE]->(jupe_model1),
 
 
