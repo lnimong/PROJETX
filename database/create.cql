@@ -1,4 +1,30 @@
 CREATE
+// templates
+(t_tshirt{name:'T-Shirt'}),
+(t_polo{name:'Polo'}),
+(t_pantalon{name:'Pantalon'}),
+(t_short{name:'Short'}),
+(t_jupe{name:'Jupe'}),
+(t_tailleur{name:'Tailleur'}),
+(t_jogging{name:'Jogging'}),
+(t_debardeur{name:'Débardeur'}),
+(t_chemise{name:'Chemise'}),
+
+(t_tshirt)-[:S_ASSOCIE_AVEC {sex : 'unisex'}]->(t_pantalon),
+(t_tshirt)-[:S_ASSOCIE_AVEC {sex : 'unisex'}]->(t_short),
+(t_tshirt)-[:S_ASSOCIE_AVEC {sex : 'unisex'}]->(t_jogging),
+(t_tshirt)-[:S_ASSOCIE_AVEC {sex : 'femme'}]->(t_jupe),
+(t_polo)-[:S_ASSOCIE_AVEC {sex : 'homme'}]->(t_short),
+(t_polo)-[:S_ASSOCIE_AVEC {sex : 'unisex'}]->(t_pantalon),
+(t_jupe)-[:S_ASSOCIE_AVEC {sex : 'femme'}]->(t_debardeur),
+(t_chemise)-[:S_ASSOCIE_AVEC {sex : 'unisex'}]->(t_pantalon),
+(t_chemise)-[:S_ASSOCIE_AVEC {sex : 'femme'}]->(t_tailleur)
+
+// entities
+(Homme{sex:'homme'}),
+(Femme{sex:'femme'}),
+(Unisex{sex:'unisex'}),
+
 (XS{name:'XS'}),
 (S{name:'S'}),
 (M{name:'M'}),   
@@ -67,4 +93,10 @@ CREATE
 (polo)-[:DE_MODELE]->(polo_model1),
 (polo)-[:DE_MODELE]->(polo_model2),
 (polo)-[:DE_MODELE]->(polo_model3),
-(polo)-[:DE_MARQUE]->(custo);
+(polo)-[:DE_MARQUE]->(custo),
+
+// relations produit - template
+(tshirt)-[:EST_TEMPLATE]->(t_tshirt),
+(jogging)-[:EST_TEMPLATE]->(t_jogging),
+(jupe)-[:EST_TEMPLATE]->(t_jupe),
+(polo)-[:EST_TEMPLATE]->(t_polo),
