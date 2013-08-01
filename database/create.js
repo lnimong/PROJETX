@@ -19,17 +19,18 @@ var log = function (next) {    // ...this is what actually persists.
 
 db.query("START r=relationship(*) delete r;", {}, log(function(){
 	db.query("START n=node(*) delete n;", {}, log(function(){
-
-		fs.readFile("create.cql", 'utf8', function(err, data) {
+    fs.readFile("create.cql", 'utf8', function(err, data) {
 		  if (err) throw err;
   			console.log(data);
-  			db.query(data, {}, log(function(){}));
+  			db.query(data, {}, log(function(){
+            fs.readFile("template.cql", 'utf8', function(err, data) {
+              if (err) throw err;
+                console.log(data);
+                db.query(data, {}, log(function(){}));
+        })}));
 		});
-
 	}));	
 }));
-
-
 
 /*var tshirt = db.createNode({name: 'tshirt', description :'un tshirt'});
 var marque = db.createNode({name: 'Nike'});
