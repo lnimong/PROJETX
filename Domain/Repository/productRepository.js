@@ -6,7 +6,7 @@ var db = new neo4j.GraphDatabase('http://localhost:7474');
 	};
 
     exports.getProduct = function (id, onResults) {
-            db.query("START product=node:node_auto_index(id='" + id + "') MATCH (product)-[:DE_MODELE]->(modele)-[?:DE_TAILLE]->(taille),(product)-[:DE_MODELE]->(modele)-[?:DE_COULEUR]->(couleur) RETURN DISTINCT product.id as id, product.name as name, product.description as description, collect(taille.name) as sizes, product.imageUrl as imageUrl", 
+            db.query("START product=node:node_auto_index(id='" + id + "') MATCH (product)-[:DE_MODELE]->(modele)-[?:DE_TAILLE]->(taille),(product)-[:DE_MODELE]->(modele)-[?:DE_COULEUR]->(couleur) RETURN DISTINCT product.id as id, product.name as name, product.description as description, collect(taille.name) as sizes, product.imageUrl as imageUrl, product.price as price", 
                 {'id': id}, onResults);
     };
 
