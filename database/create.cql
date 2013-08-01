@@ -151,5 +151,5 @@ CREATE
 (jogging)-[:EST_TEMPLATE]->(t_jogging),
 (jupe)-[:EST_TEMPLATE]->(t_jupe),
 (polo)-[:EST_TEMPLATE]->(t_polo),
-(pantalon)-[:EST_TEMPLATE]->(t_pantalon),
+(pantalon)-[:EST_TEMPLATE]->(t_pantalon),
 (chemise)-[:EST_TEMPLATE]->(t_chemise),
