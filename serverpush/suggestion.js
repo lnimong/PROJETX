@@ -8,8 +8,8 @@ exports.listen = function (server) {
 
 	io.of('suggestions').on('connection', function (socket) {
 
-		evPublisher.subscribe( 'productAdded', function () {
-			socket.emit('products', productsRepository.getSuggestions());
+		evPublisher.subscribe( 'productAdded', function (msg, data) {
+			socket.emit('products', productsRepository.getSuggestions(data.id));
 		});
 
 	});

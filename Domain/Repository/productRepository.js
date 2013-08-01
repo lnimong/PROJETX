@@ -10,12 +10,18 @@ var db = new neo4j.GraphDatabase('http://localhost:7474');
                 {'id': id}, onResults);
     };
 
-	exports.getSuggestions = function () { 
-		return [
-			{ 'name':'t-shirt bleu', 'description': '', 'imageUrl':'http://ecx.images-amazon.com/images/I/41o8ASd%2B%2B%2BL._SX342_.jpg', 'price':50, 'id':1} , 
-    		{ 'name':'pantalon', 'imageUrl':'http://ecx.images-amazon.com/images/I/41o8ASd%2B%2B%2BL._SX342_.jpg', 'price':50, 'id':2}, 
-    		{ 'name':'chaussure marron', 'imageUrl':'http://ecx.images-amazon.com/images/I/41o8ASd%2B%2B%2BL._SX342_.jpg', 'price':33.5, 'id':3}
-		];
+	exports.getSuggestions = function (id, onResults) { 
+        db.query("START model=node:node_auto_index(mid='"+ id +"') "+ 
+                  "MATCH (genre)-[:CONVIENT_A]-(model)<-[:DE_MODELE]-(produit) " +
+                                             "-[:EST_UN]->(template) " + 
+                                             "-[:S_ASSOCIE_AVEC]-(complement) " +
+                                             "<-[:EST_UN]-(comp_produit) " +
+                                             "-[:DE_MODELE]->(comp_model) " +
+                                             "-[:CONVIENT_A]->(produit_sex) " +
+                  "WHERE produit_sex.sex = genre.sex " +
+                  "RETURN DISTINCT comp_produit.name as name, comp_produit.description as description, " +
+                                   "comp_produit.imageUrl as imageUrl, comp_produit.price as price, " +
+                                   "comp_produit.id as id;", {}, onResults);
 	};
 
 
