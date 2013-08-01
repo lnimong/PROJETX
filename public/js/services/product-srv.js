@@ -1,7 +1,9 @@
-define(function () {
+define(["socketio"], function (socketio) {
   'use strict';
 
   function ProductSrv ($window, $http) {
+
+    var socket = socketio.connect().socket;
 
     this.getProduct = function (id) {
       return $http
@@ -24,6 +26,14 @@ define(function () {
           return response.data;
         });
     };
+
+    this.subscribeToAvailability = function (product) {
+      
+      socket.of('availability').on('productAvailable:'+product.id, function (product) {
+        $rootScope.$broadcast('productSrv:productAvailable', product);
+        $rootScope.$apply();
+      });
+    }
 	}
 
   ProductSrv.$inject = [ '$window', '$http' ];

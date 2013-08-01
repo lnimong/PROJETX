@@ -19,6 +19,11 @@ define(function () {
 
       cartSrv.addToCart($scope.product.$$v, $scope.selectedSize);
     };
+
+    $scope.subscribeToAvailability = function () {
+
+      productSrv.subscribeToAvailability($scope.product.$$v);
+    };
   }
 
   ProductCtrl.$inject = [ '$scope', '$routeParams', 'productSrv', 'cartSrv' ];

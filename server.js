@@ -1,6 +1,6 @@
 var http = require('http'),
     app  = require('./app'),
-    serverpush = require('./serverpush/suggestion');
+    serverpush = require('./serverpush/server-events');
 
 var server = http.createServer(app);
 
