@@ -1,0 +1,54 @@
+.suggested-products {
+  height: 0;
+  overflow: hidden;
+}
+
+.suggested-products.visible {
+  height: 210px;
+  margin-bottom: 1em;
+}
+
+.suggested-products .carousel .product {
+  display: inline-block;
+  margin-left: 115px;
+}
+
+.suggested-products .carousel .product img {
+  border: 0;
+  height: 210px;
+  width: 160px;
+}
+
+.suggested-products .carousel .product .carousel-caption {
+  left: auto;
+  padding: 5px;
+  right: auto;
+  width: 150px;
+}
+
+.suggested-products .carousel .carousel-control {
+  cursor: pointer;
+}
+
+.suggested-products.show-animation,
+.suggested-products.hide-animation {
+  -webkit-transition: all linear .5s;
+  -moz-transition:    all linear .5s;
+  transition:         all linear .5s;
+}
+
+.suggested-products.show-animation {
+  height: 0;
+}
+
+.suggested-products.show-animation-active {
+  height: 210px;
+}
+
+.suggested-products.hide-animation {
+  height: 210px;
+}
+
+.suggested-products.hide-animation-active {
+  height: 0;
+}

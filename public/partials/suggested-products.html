@@ -1,11 +1,19 @@
-<div class="row-fluid" ng-controller="SuggestedProductsCtrl">
-  <div ng-repeat="product in products" class="span2">
-    <a href="/product/{{ product.id }}">
-      <img ng-src="{{ product.imageUrl }}" />
-    </a>
-    <div>
-      <div>{{ product.name }}</div>
-      <div>{{ product.price }} €</div>
-    </div>
-  </div>
+<div class="row-fluid suggested-products"
+     ng-controller="SuggestedProductsCtrl"
+     ng-show="productGroups.length"
+     ng-animate="{ show: 'show-animation', hide: 'hide-animation' }"
+     ng-class="{ visible: isLoaded }">
+  <carousel interval="interval">
+    <slide ng-repeat="productGroup in productGroups" active="productGroup.active">
+      <div class="product" ng-repeat="product in productGroup.products">
+        <a href="/product/{{ product.id }}">
+          <img ng-src="{{ product.imageUrl }}">
+          <div class="carousel-caption">
+            <h4>{{ product.name }}</h4>
+            <p>{{ product.price }} €</p>
+          </div>
+        </a>
+      </div>
+    </slide>
+  </carousel>
 </div>
