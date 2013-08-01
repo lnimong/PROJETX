@@ -22,12 +22,7 @@ db.query("START r=relationship(*) delete r;", {}, log(function(){
     fs.readFile("create.cql", 'utf8', function(err, data) {
 		  if (err) throw err;
   			console.log(data);
-  			db.query(data, {}, log(function(){
-            fs.readFile("template.cql", 'utf8', function(err, data) {
-              if (err) throw err;
-                console.log(data);
-                db.query(data, {}, log(function(){}));
-        })}));
+  			db.query(data, {}, log(function(){}));
 		});
 	}));	
 }));
