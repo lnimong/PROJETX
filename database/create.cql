@@ -18,7 +18,7 @@ CREATE
 (t_polo)-[:S_ASSOCIE_AVEC {sex : 'unisex'}]->(t_pantalon),
 (t_jupe)-[:S_ASSOCIE_AVEC {sex : 'femme'}]->(t_debardeur),
 (t_chemise)-[:S_ASSOCIE_AVEC {sex : 'unisex'}]->(t_pantalon),
-(t_chemise)-[:S_ASSOCIE_AVEC {sex : 'femme'}]->(t_tailleur)
+(t_chemise)-[:S_ASSOCIE_AVEC {sex : 'femme'}]->(t_tailleur),
 
 // entities
 (Homme{sex:'homme'}),
@@ -99,4 +99,4 @@ CREATE
 (tshirt)-[:EST_TEMPLATE]->(t_tshirt),
 (jogging)-[:EST_TEMPLATE]->(t_jogging),
 (jupe)-[:EST_TEMPLATE]->(t_jupe),
-(polo)-[:EST_TEMPLATE]->(t_polo),
+(polo)-[:EST_TEMPLATE]->(t_polo);
