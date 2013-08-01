@@ -48,7 +48,7 @@ CREATE
 
 
 (addidas {name:'Addidas'}),
-(tshirt {id:1, name:'T-Shirt', description:'un tshirt', price:12, imageUrl:'/images/1.jpg'}),
+(tshirt {id:1, name:'T-Shirt', description:'un tshirt', price:12, imageUrl:'1.jpg'}),
 (tshirt_model1),
 (tshirt_model2),
 (tshirt_model1)-[:DE_TAILLE]->(S),
@@ -63,7 +63,7 @@ CREATE
 (tshirt_model2)-[:POUR]->(unisex),
 (tshirt)-[:DE_MARQUE]->(addidas),
 
-(jogging {id:3, name:'Jogging', description:'Pantalon de jogging coupe droite', price:20, imageUrl:'/images/3.jpg'}),
+(jogging {id:3, name:'Jogging', description:'Pantalon de jogging coupe droite', price:20, imageUrl:'3.jpg'}),
 (jogging_model1),
 (jogging_model1)-[:DE_TAILLE]->(S),
 (jogging_model1)-[:DE_COULEUR]->(noir),
@@ -72,7 +72,7 @@ CREATE
 (jogging)-[:DE_MARQUE]->(addidas),
 
 (tommy {name:'Tommy Hilfiger'}),
-(jupe {id:4, name:'Jupe', description:'Jupe courte coupe droite en velours côtelé', price:30, imageUrl:'/images/4.jpg'}),
+(jupe {id:4, name:'Jupe', description:'Jupe courte coupe droite en velours côtelé', price:30, imageUrl:'4.jpg'}),
 (jupe_model1),
 (jupe_model2),
 (jupe_model3),
@@ -96,7 +96,7 @@ CREATE
 (jupe)-[:DE_MODELE]->(jupe_model4),
 
 (custo {name:'Custo'}),
-(polo {id:2, name:'Polo', description:'un polo', price:10, imageUrl:'/images/2.jpg'}),
+(polo {id:2, name:'Polo', description:'un polo', price:10, imageUrl:'2.jpg'}),
 (polo_model1),
 (polo_model2),
 (polo_model3),
@@ -115,7 +115,7 @@ CREATE
 (polo)-[:DE_MARQUE]->(custo),
 
 (diesel {name:'Diesel'}),
-(pantalon {id:5, name:'Pantalon', description:'un jean', price:25, imageUrl:'/images/5.jpg'}),
+(pantalon {id:5, name:'Pantalon', description:'un jean', price:25, imageUrl:'5.jpg'}),
 (pantalon_model1),
 (pantalon_model2),
 (pantalon_model3),
@@ -134,7 +134,7 @@ CREATE
 (pantalon)-[:DE_MARQUE]->(diesel),
 
 (paulsmith {name:'Paul Smith'}),
-(chemise {id:6, name:'Chemise', description:'Chemise ajustée', price:30, imageUrl:'/images/6.jpg'}),
+(chemise {id:6, name:'Chemise', description:'Chemise ajustée', price:30, imageUrl:'6.jpg'}),
 (chemise_model1),
 (chemise_model2),
 (chemise_model3),
@@ -158,7 +158,7 @@ CREATE
 (chemise)-[:DE_MARQUE]->(paulsmith),
 
 (petitbateau {name:'Petit Bateau'}),
-(short {id:7, name:'Short', description:'Short de ville', price:15, imageUrl:'/images/7.jpg'}),
+(short {id:7, name:'Short', description:'Short de ville', price:15, imageUrl:'7.jpg'}),
 (short_model1),
 (short_model2),
 (short_model3),
@@ -182,7 +182,7 @@ CREATE
 (short)-[:DE_MARQUE]->(petitbateau),
 
 (topshop {name:'Top Shop'}),
-(debardeur {id:7, name:'Débardeur', description:'Débardeur cool', price:8, imageUrl:'/images/8.jpg'}),
+(debardeur {id:7, name:'Débardeur', description:'Débardeur cool', price:8, imageUrl:'8.jpg'}),
 (debardeur_model1),
 (debardeur_model2),
 (debardeur_model1)-[:DE_TAILLE]->(T38),
@@ -196,7 +196,7 @@ CREATE
 (debardeur)-[:DE_MARQUE]->(topshop),
 
 (maje {name:'Maje'}),
-(tailleur {id:7, name:'Tailleur', description:'Jupe tailleur habillée', price:50, imageUrl:'/images/9.jpg'}),
+(tailleur {id:7, name:'Tailleur', description:'Jupe tailleur habillée', price:50, imageUrl:'9.jpg'}),
 (tailleur_model1),
 (tailleur_model2),
 (tailleur_model1)-[:DE_TAILLE]->(T36),
