@@ -20,7 +20,3 @@ exports.productStock = function(req, res){
 		res.send(data);
 	});
 };
-
-exports.suggestions = function(req, res){
-    res.send(productRepository.getSuggestions());
-};

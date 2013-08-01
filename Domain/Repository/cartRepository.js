@@ -1,8 +1,8 @@
 var evPublisher = require('pubsub-js');
 
-exports.addToCart = function (productId, size, callback) {
+exports.addToCart = function (modelId, size, callback) {
 
 	callback(null);
 	console.log('produit ajouté');
-	evPublisher.publish('productAdded');
+	evPublisher.publish('productAdded', {id : modelId});
 } 
