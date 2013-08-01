@@ -21,6 +21,10 @@ CREATE
 (t_chemise)-[:S_ASSOCIE_AVEC {sex : 'femme'}]->(t_tailleur)
 
 // entities
+(Homme{sex:'homme'}),
+(Femme{sex:'femme'}),
+(Unisex{sex:'unisex'}),
+
 (XS{name:'XS'}),
 (S{name:'S'}),
 (M{name:'M'}),   
@@ -89,4 +93,10 @@ CREATE
 (polo)-[:DE_MODELE]->(polo_model1),
 (polo)-[:DE_MODELE]->(polo_model2),
 (polo)-[:DE_MODELE]->(polo_model3),
-(polo)-[:DE_MARQUE]->(custo);
+(polo)-[:DE_MARQUE]->(custo),
+
+// relations produit - template
+(tshirt)-[:EST_TEMPLATE]->(t_tshirt),
+(jogging)-[:EST_TEMPLATE]->(t_jogging),
+(jupe)-[:EST_TEMPLATE]->(t_jupe),
+(polo)-[:EST_TEMPLATE]->(t_polo),
