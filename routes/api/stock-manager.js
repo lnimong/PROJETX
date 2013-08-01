@@ -6,4 +6,5 @@ exports.setQuantity = function (req, res) {
 		id : req.body.id,
 		modelId : req.body.modelId
 	});
+	res.send('ok');
 }

@@ -1,8 +1,7 @@
 var home = require('./home');
 var cart = require('./api/cart');
 var products = require('./api/products');
-var productAvailibility = require('./api/productAvailability');
-var stock = require('./api/stockManager');
+var stock = require('./api/stock-manager');
 
 exports.register = function (app) {
   /* views */
@@ -13,7 +12,6 @@ exports.register = function (app) {
   /* api */
   app.get('/api/products', products.all);
   app.get('/api/products/:id', products.product);
-  //app.get('/api/products/:id/suggest', products.suggestions);
 
   app.post('/api/cart', cart.addToCart);
   app.put('/api/stock', stock.setQuantity);

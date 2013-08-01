@@ -98,7 +98,7 @@ CREATE
 
 (custo {name:'Custo'}),
 (polo {id:2, name:'Polo', description:'un polo', price:10, imageUrl:'2.jpg'}),
-(polo_model1{mid:8, stock:15}),
+(polo_model1{mid:8, stock:0}),
 (polo_model2{mid:9, stock:10}),
 (polo_model3{mid:10, stock:0}),
 (polo_model1)-[:DE_TAILLE]->(S),

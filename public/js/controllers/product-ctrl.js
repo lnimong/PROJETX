@@ -4,7 +4,7 @@ define(function () {
   function ProductCtrl ($scope, $routeParams, productSrv, cartSrv) {
     $scope.product = productSrv.getProduct($routeParams.id);
     $scope.selectedSize = null;
-    $scope.availableStock = 1; // TODO
+    $scope.availableStock = 0; // TODO
 
     $scope.$watch('product', function (newProduct, oldProduct) {
       if (newProduct) {
