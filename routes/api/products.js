@@ -14,6 +14,13 @@ exports.product = function(req, res){
 	});
 };
 
+exports.productStock = function(req, res){
+    productRepository.getProductStock(req.params.id, req.params.color, req.params.size, req.params.sex, function (err, data)
+	{
+		res.send(data);
+	});
+};
+
 exports.suggestions = function(req, res){
     res.send(productRepository.getSuggestions());
 };

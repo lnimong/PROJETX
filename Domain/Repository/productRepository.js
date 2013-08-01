@@ -10,6 +10,10 @@ var db = new neo4j.GraphDatabase('http://localhost:7474');
                 {'id': id}, onResults);
     };
 
+    exports.getProductStock = function (id, color, size, sex, onResults) {
+            return { 'modelId': 5, 'stock':0 };
+    };
+    
 	exports.getSuggestions = function () { 
 		return [
 			{ 'name':'t-shirt bleu', 'description': '', 'imageUrl':'http://ecx.images-amazon.com/images/I/41o8ASd%2B%2B%2BL._SX342_.jpg', 'price':50, 'id':1} , 
