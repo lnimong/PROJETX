@@ -2,14 +2,14 @@ define(function () {
   'use strict';
 
   function SuggestedProductsCtrl ($scope) {
-    $scope.isLoaded = false;
+    $scope.canBeVisible = false;
     $scope.productGroups = null;
     $scope.interval = 5000;
 
     $scope.$on('suggestionSrv:suggestedProducts', function (event, products) {
       var i, len;
 
-      $scope.isLoaded = true;
+      $scope.canBeVisible = true;
       $scope.productGroups = []; // Multiple groups of products
 
       for (i = 0, len = products.length; i < len; i++) {
