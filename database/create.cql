@@ -1,4 +1,26 @@
 CREATE
+// templates
+(t_tshirt{name:'T-Shirt'}),
+(t_polo{name:'Polo'}),
+(t_pantalon{name:'Pantalon'}),
+(t_short{name:'Short'}),
+(t_jupe{name:'Jupe'}),
+(t_tailleur{name:'Tailleur'}),
+(t_jogging{name:'Jogging'}),
+(t_debardeur{name:'Débardeur'}),
+(t_chemise{name:'Chemise'}),
+
+(t_tshirt)-[:S_ASSOCIE_AVEC {sex : 'unisex'}]->(t_pantalon),
+(t_tshirt)-[:S_ASSOCIE_AVEC {sex : 'unisex'}]->(t_short),
+(t_tshirt)-[:S_ASSOCIE_AVEC {sex : 'unisex'}]->(t_jogging),
+(t_tshirt)-[:S_ASSOCIE_AVEC {sex : 'femme'}]->(t_jupe),
+(t_polo)-[:S_ASSOCIE_AVEC {sex : 'homme'}]->(t_short),
+(t_polo)-[:S_ASSOCIE_AVEC {sex : 'unisex'}]->(t_pantalon),
+(t_jupe)-[:S_ASSOCIE_AVEC {sex : 'femme'}]->(t_debardeur),
+(t_chemise)-[:S_ASSOCIE_AVEC {sex : 'unisex'}]->(t_pantalon),
+(t_chemise)-[:S_ASSOCIE_AVEC {sex : 'femme'}]->(t_tailleur)
+
+// entities
 (XS{name:'XS'}),
 (S{name:'S'}),
 (M{name:'M'}),   
