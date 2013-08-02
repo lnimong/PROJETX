@@ -7,7 +7,7 @@ exports.listen = function (server) {
 
 	io.of('suggestions').on('connection', function (socket) {
 		evPublisher.subscribe('productAdded', function (msg, product) {
-			productRepository.getSuggestions(product.modelId, 
+			productRepository.getSuggestions(product.modelId,
 				function(err, products) {
 					socket.emit('products', products);
 				});
@@ -19,4 +19,4 @@ exports.listen = function (server) {
 			socket.emit('productAvailable:'+product.modelId, product);
 		});
 	});
-}
+};

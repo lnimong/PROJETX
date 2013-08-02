@@ -1,18 +1,26 @@
-.product .size {
+.product .size,
+.product .color {
   line-height: 20px;
   margin: 0 .5em;
 }
 
-.product .size input[type="radio"] {
+.product .size input[type="radio"],
+.product .color input[type="radio"] {
   margin: 0;
 }
 
-.product .size:first-child {
+.product .size:first-child,
+.product .color:first-child {
   margin-left: 0;
 }
 
-.product .size:last-child {
+.product .size:last-child,
+.product .color:last-child {
   margin-right: 0;
+}
+
+.product form > div {
+  margin-bottom: 1em;
 }
 
 .product form .btn {

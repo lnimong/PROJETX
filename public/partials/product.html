@@ -21,9 +21,22 @@
           Taille :
           <span class="badge size" ng-repeat="size in product.sizes">
             <input type="radio"
-                   name="sizeInput"
                    ng-model="$parent.selectedSize"
-                   value="{{ size }}" /> {{ size }}
+                   value="{{ size }}"
+                   name="sizeInput"
+                   ng-change="refreshStock()" /> {{ size }}
+          </span>
+        </div>
+        <div>
+          Couleur :
+          <span class="badge color"
+                ng-repeat="color in product.colors"
+                ng-style="{ 'background-color': '#' + color }">
+            <input type="radio"
+                   ng-model="$parent.selectedColor"
+                   value="{{ color }}"
+                   name="colorInput"
+                   ng-change="refreshStock()" />
           </span>
         </div>
         <div ng-switch on="product.stock">

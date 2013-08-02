@@ -1,17 +1,35 @@
 var cartRepository = require('../../domain/repository/cartRepository');
+var stockRepository = require('../../domain/repository/stockRepository');
+var evPublisher = require('pubsub-js');
 
 exports.addToCart = function(req, res) {
-
-	cartRepository.addToCart(req.body.modelId, req.body.size, function(err) {
-		if(err) {
+	var mid = req.body.modelId;
+	
+ 	stockRepository.decreaseModelQuantity(mid, function (decrErr, data) {
+ 		if (decrErr) {
 			res.send({
-				success : false
+				success : false,
+				error : decrErr
 			});
 			return;
 		}
 
-		res.send({
-			success : true
+		cartRepository.addToCart(mid, function (addErr) {
+			if (addErr) {
+				stockRepository.increaseModelQuantity(mid, function() {
+					res.send({
+						success : false,
+						error : addErr
+					});
+				});
+				return;
+			}
+
+			evPublisher.publish('productAdded', { modelId : mid });
+			res.send({
+				success : true
+			});
 		});
-	});
+
+ 	});
 };
