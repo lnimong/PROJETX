@@ -1,8 +1,12 @@
 var neo4j = require('neo4j');
+var fs = require('fs');
+var path = require('path');
 var db = new neo4j.GraphDatabase('http://localhost:7474');
 
+var getAllProductsQuery = fs.readFileSync(__dirname +"/CypherQueries/getAllProductsQuery.cql", "UTF8");
+
 	exports.getAllProducts = function (onResults) {
-            db.query('START product=node(*) MATCH (product)-[:DE_MODELE]->() RETURN DISTINCT product.id as id, product.name as name, product.description as description, product.price as price, product.imageUrl as imageUrl', {}, onResults);
+            db.query(getAllProductsQuery, {}, onResults);
 	};
 
     exports.getProduct = function (id, onResults) {
@@ -27,24 +31,3 @@ var db = new neo4j.GraphDatabase('http://localhost:7474');
                                    "comp_produit.imageUrl as imageUrl, comp_produit.price as price, " +
                                    "comp_produit.id as id;", {id:id}, onResults);
 	};
-
-
-
-/*var log = function (next) {    // ...this is what actually persists.
-
-	return function(err, node){
-    	if (err) {
-        	console.log('Error saving new node to database:', err);
-    	} else {
-        	console.log('Node saved to database with id:', node.id);
-    	}
-    	next(node);
-	}
-
-};
-
-exports.getAllProducts = db.query('START product=node(*)
-MATCH (product)-[:DE_MODELE]->()
-RETURN product.name as name, product.description as description, 
-product.price as price, product.imageUrl as imageUrl', {}, log(function(node){
-}));*/
