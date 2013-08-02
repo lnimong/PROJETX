@@ -8,7 +8,7 @@
     <slide ng-repeat="productGroup in productGroups" active="productGroup.active">
       <div class="product" ng-repeat="product in productGroup.products">
         <a href="/product/{{ product.id }}">
-          <img ng-src="{{ product.imageUrl }}">
+          <img ng-src="/images/{{ product.imageUrl }}">
           <div class="carousel-caption">
             <h4>{{ product.name }}</h4>
             <p>{{ product.price }} €</p>
