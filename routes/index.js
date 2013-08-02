@@ -12,6 +12,7 @@ exports.register = function (app) {
   /* api */
   app.get('/api/products', products.all);
   app.get('/api/products/:id', products.product);
+  app.get('/api/products/:id/stock', products.productStock);
 
   app.post('/api/cart', cart.addToCart);
   app.put('/api/stock', stock.setQuantity);

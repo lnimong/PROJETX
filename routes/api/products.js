@@ -15,7 +15,7 @@ exports.product = function(req, res){
 };
 
 exports.productStock = function(req, res){
-    productRepository.getProductStock(req.params.id, req.params.color, req.params.size, req.params.sex, function (err, data)
+    productRepository.getProductStock(req.params.id, req.params.color, req.params.size, function (err, data)
 	{
 		res.send(data);
 	});

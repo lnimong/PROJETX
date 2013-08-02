@@ -1,5 +1,13 @@
+.catalog.row-fluid [class*="span"]:first-child {
+  margin-left: 8px;
+}
+
+.catalog.row-fluid [class*="span"]:last-child {
+  margin-right: 8px;
+}
+
 .catalog .product {
-	margin: 0 5px;
+	margin: 25px 8px;
 }
 
 .catalog .product .details {
