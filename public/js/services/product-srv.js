@@ -16,7 +16,7 @@ define([
         })
         .then(function (response) {
           var product = response.data[0];
-          return _this.getProductStock(product.id, 0, 0)
+          return _this.getProductStock(product.id, 36, 'Marron')
             .then(function (stock) {
               product.stock = stock.stock;
               product.modelId = stock.modelId;
