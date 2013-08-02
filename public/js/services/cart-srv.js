@@ -4,7 +4,7 @@ define(function () {
   function CartSrv ($http) {
     this.addToCart = function (product, size) {
       return $http
-        .post('/api/cart', { id: product.id, size: size })
+        .post('/api/cart', { modelId: product.modelId, size: size })
         .error(function (data, status) {
           deferred.reject(status);
         });

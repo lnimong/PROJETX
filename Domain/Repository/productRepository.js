@@ -14,7 +14,7 @@ exports.getProductStock = function (id, color, size, onResults) {
     onResults(null, { modelId: 5, stock: 0 });
 };
 
-exports.getSuggestions = function (id, onResults) { 
+exports.getSuggestions = function (modelId, onResults) { 
         db.query("START model=node:node_auto_index(mid={id}) "+ 
                   "MATCH (genre)-[:CONVIENT_A]-(model)<-[:DE_MODELE]-(produit) " +
                                              "-[:EST_UN]->(template) " + 
@@ -25,7 +25,7 @@ exports.getSuggestions = function (id, onResults) {
                   "WHERE produit_sex.sex = genre.sex " +
                   "RETURN DISTINCT comp_produit.name as name, comp_produit.description as description, " +
                                    "comp_produit.imageUrl as imageUrl, comp_produit.price as price, " +
-                                   "comp_produit.id as id;", {id:id}, onResults);
+                                   "comp_produit.id as id;", {id:modelId}, onResults);
 };
 
 
