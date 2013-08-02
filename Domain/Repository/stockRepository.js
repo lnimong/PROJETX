@@ -27,7 +27,7 @@ exports.decreaseModelQuantity = function (mid, callback) {
 			 function (err, data) {
 				if (err) {
 					callback({ 
-						message : 'une erreur est survenue lors de la récupération de ce modèle : ' + mid ,
+						message : '(decrease) une erreur est survenue lors de la récupération de ce modèle : ' + mid ,
 						neo4jError : err
 					});
 					return;
@@ -52,7 +52,7 @@ exports.increaseModelQuantity = function (mid, callback) {
 		     function (err, data) {
 				if (err) {
 					callback({ 
-						message : 'une erreur est survenue lors de la récupération de ce modèle : ' + mid ,
+						message : '(increase) une erreur est survenue lors de la récupération de ce modèle : ' + mid ,
 						neo4jError : err
 					});
 					return;
