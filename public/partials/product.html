@@ -26,7 +26,7 @@
                    value="{{ size }}" /> {{ size }}
           </span>
         </div>
-        <div ng-switch on="availableStock">
+        <div ng-switch on="product.stock">
           <input ng-switch-default type="submit" ng-click="addToCart()" class="btn btn-primary" value="Ajouter" />
           <input ng-switch-when="0" type="submit" ng-click="subscribeToAvailability()" class="btn" value="Me prévenir" />
         </div>

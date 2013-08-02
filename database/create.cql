@@ -103,7 +103,7 @@ CREATE
 (polo_model3{mid:10, stock:0}),
 (polo_model1)-[:DE_TAILLE]->(S),
 (polo_model1)-[:DE_COULEUR]->(bleu_ciel),
-(polo_model2)-[:DE_TAILLE]->(M),
+(polo_model2)-[:DE_TAILLE]->(L),
 (polo_model2)-[:DE_COULEUR]->(bleu_ciel),
 (polo_model3)-[:DE_TAILLE]->(M),
 (polo_model3)-[:DE_COULEUR]->(orange),

@@ -13,7 +13,7 @@ exports.listen = function (server) {
 
 	io.of('availability').on('connection', function (socket) {
 		evPublisher.subscribe('productAvailable', function (msg, product) {
-			socket.emit('productAvailable:'+product.id, product);
+			socket.emit('productAvailable:'+product.modelId, product);
 		});
 	});
 }
