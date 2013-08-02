@@ -4,14 +4,14 @@ var path = require('path');
 var db = new neo4j.GraphDatabase('http://localhost:7474');
 
 var getAllProductsQuery = fs.readFileSync(__dirname +"/CypherQueries/getAllProductsQuery.cql", "UTF8");
+var getProduct = fs.readFileSync(__dirname +"/CypherQueries/getProduct.cql", "UTF8");
 
 	exports.getAllProducts = function (onResults) {
             db.query(getAllProductsQuery, {}, onResults);
 	};
 
     exports.getProduct = function (id, onResults) {
-            db.query("START product=node:node_auto_index(id={id}) MATCH (product)-[:DE_MODELE]->(modele)-[?:DE_TAILLE]->(taille),(product)-[:DE_MODELE]->(modele)-[?:DE_COULEUR]->(couleur) RETURN DISTINCT product.id as id, product.name as name, product.description as description, collect(taille.name) as sizes, product.imageUrl as imageUrl, product.price as price", 
-                {id: id}, onResults);
+            db.query(getProduct, {id: id}, onResults);
     };
 
  exports.getProductStock = function (id, color, size, sex, onResults) {
