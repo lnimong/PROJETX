@@ -11,7 +11,7 @@ exports.getProduct = function (id, onResults) {
 };
 
 exports.getProductStock = function (id, color, size, onResults) {
-    onResults(null, { modelId: 5, stock: 0 });
+    onResults(null, { modelId: 5, stock: 1 });
 };
 
 exports.getSuggestions = function (modelId, onResults) { 

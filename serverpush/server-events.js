@@ -1,13 +1,16 @@
 var sio = require('socket.io');
 var evPublisher = require('pubsub-js');
-var productsRepository = require('../domain/repository/productRepository');
+var productRepository = require('../domain/repository/productRepository');
 
 exports.listen = function (server) {
 	var io = sio.listen(server);
 
 	io.of('suggestions').on('connection', function (socket) {
 		evPublisher.subscribe('productAdded', function (msg, product) {
-			socket.emit('products', productsRepository.getSuggestions(product.modelId));
+			productRepository.getSuggestions(product.modelId, 
+				function(err, products) {
+					socket.emit('products', products);
+				});
 		});
 	});
 
