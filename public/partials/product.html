@@ -16,7 +16,7 @@
       <p>
         Prix : {{ product.price }} €
       </p>
-      <form name="productForm" ng-submit="addToCart()">
+      <form name="productForm">
         <div>
           Taille :
           <span class="badge size" ng-repeat="size in product.sizes">
@@ -27,8 +27,8 @@
           </span>
         </div>
         <div ng-switch on="availableStock">
-          <input ng-switch-default type="submit" class="btn btn-primary" value="Ajouter" />
-          <input ng-switch-when="0" type="submit" class="btn" value="Me prévenir" />
+          <input ng-switch-default type="submit" ng-click="addToCart()" class="btn btn-primary" value="Ajouter" />
+          <input ng-switch-when="0" type="submit" ng-click="subscribeToAvailability()" class="btn" value="Me prévenir" />
         </div>
       </form>
     </div>

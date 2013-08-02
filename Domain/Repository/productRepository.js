@@ -10,6 +10,10 @@ var db = new neo4j.GraphDatabase('http://localhost:7474');
                 {id: id}, onResults);
     };
 
+ exports.getProductStock = function (id, color, size, sex, onResults) {
+            return { 'modelId': 5, 'stock':0 };
+    };
+
 	exports.getSuggestions = function (id, onResults) { 
         db.query("START model=node:node_auto_index(mid={id}) "+ 
                   "MATCH (genre)-[:CONVIENT_A]-(model)<-[:DE_MODELE]-(produit) " +
