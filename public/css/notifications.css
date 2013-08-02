@@ -1,0 +1,15 @@
+.notifications .dropdown > .btn {
+  background: none;
+  border: 0;
+  box-shadow: none;
+  color: white;
+}
+
+.notifications .dropdown .dropdown-actions {
+  text-align: center;
+}
+
+.notifications .dropdown .dropdown-actions .btn {
+  margin: 0;
+  padding: 2px 5px;
+}

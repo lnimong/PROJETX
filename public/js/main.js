@@ -6,6 +6,7 @@ require.config({
     'jquery': '../components/jquery/jquery',
     'angular': '../components/angular-unstable/angular',
     'angular-ui-bootstrap-template': '../components/angular-ui-bootstrap/template',
+    'angular-ui-bootstrap-dropdownToggle': '../components/angular-ui-bootstrap/src/dropdownToggle/dropdownToggle',
     'angular-ui-bootstrap-transition': '../components/angular-ui-bootstrap/src/transition/transition',
     'angular-ui-bootstrap-collapse': '../components/angular-ui-bootstrap/src/collapse/collapse',
     'angular-ui-bootstrap-carousel': '../components/angular-ui-bootstrap/src/carousel/carousel'
@@ -16,6 +17,9 @@ require.config({
       exports: 'angular'
     },
     'angular-ui-bootstrap-transition': {
+      deps: [ 'angular' ]
+    },
+    'angular-ui-bootstrap-dropdownToggle': {
       deps: [ 'angular' ]
     },
     'angular-ui-bootstrap-collapse': {

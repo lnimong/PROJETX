@@ -1,10 +1,9 @@
 define(function () {
   'use strict';
 
-  function ProductCtrl ($scope, $routeParams, productSrv, cartSrv) {
+  function ProductCtrl ($scope, $routeParams, $q, productSrv, cartSrv) {
     $scope.product = productSrv.getProduct($routeParams.id);
     $scope.selectedSize = null;
-    //$scope.availableStock = 0; // TODO
 
     $scope.$watch('product', function (newProduct, oldProduct) {
       if (newProduct) {
@@ -21,12 +20,11 @@ define(function () {
     };
 
     $scope.subscribeToAvailability = function () {
-
       productSrv.subscribeToAvailability($scope.product.$$v);
     };
   }
 
-  ProductCtrl.$inject = [ '$scope', '$routeParams', 'productSrv', 'cartSrv' ];
+  ProductCtrl.$inject = [ '$scope', '$routeParams', '$q', 'productSrv', 'cartSrv' ];
 
   return ProductCtrl;
 });

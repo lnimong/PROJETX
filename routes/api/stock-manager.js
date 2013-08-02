@@ -6,7 +6,6 @@ exports.setQuantity = function (req, res) {
 
 
 	evPublisher.publish('productAvailable', {
-		id : req.body.id,
 		modelId : req.body.modelId
 	});
 	res.send('ok');
