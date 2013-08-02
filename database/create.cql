@@ -10,15 +10,15 @@ CREATE
 (t_debardeur{name:'Débardeur template'}),
 (t_chemise{name:'Chemise template'}),
 
-(t_tshirt)-[:S_ASSOCIE_AVEC {sex : 'unisex'}]-(t_pantalon),
-(t_tshirt)-[:S_ASSOCIE_AVEC {sex : 'unisex'}]-(t_short),
-(t_tshirt)-[:S_ASSOCIE_AVEC {sex : 'unisex'}]-(t_jogging),
-(t_tshirt)-[:S_ASSOCIE_AVEC {sex : 'femme'}]-(t_jupe),
-(t_polo)-[:S_ASSOCIE_AVEC {sex : 'homme'}]-(t_short),
-(t_polo)-[:S_ASSOCIE_AVEC {sex : 'unisex'}]-(t_pantalon),
-(t_jupe)-[:S_ASSOCIE_AVEC {sex : 'femme'}]-(t_debardeur),
-(t_chemise)-[:S_ASSOCIE_AVEC {sex : 'unisex'}]-(t_pantalon),
-(t_chemise)-[:S_ASSOCIE_AVEC {sex : 'femme'}]-(t_tailleur),
+(t_tshirt)-[:S_ASSOCIE_AVEC]-(t_pantalon),
+(t_tshirt)-[:S_ASSOCIE_AVEC]-(t_short),
+(t_tshirt)-[:S_ASSOCIE_AVEC]-(t_jogging),
+(t_tshirt)-[:S_ASSOCIE_AVEC]-(t_jupe),
+(t_polo)-[:S_ASSOCIE_AVEC]-(t_short),
+(t_polo)-[:S_ASSOCIE_AVEC]-(t_pantalon),
+(t_jupe)-[:S_ASSOCIE_AVEC]-(t_debardeur),
+(t_chemise)-[:S_ASSOCIE_AVEC]-(t_pantalon),
+(t_chemise)-[:S_ASSOCIE_AVEC]-(t_tailleur),
 
 // entities
 (homme{sex:'homme'}),
@@ -168,7 +168,7 @@ CREATE
 (short)-[:DE_MARQUE]->(petitbateau),
 
 (topshop {name:'Top Shop'}),
-(debardeur {id:7, name:'Débardeur', description:'Débardeur cool', price:8, imageUrl:'8.jpg'}),
+(debardeur {id:8, name:'Débardeur', description:'Débardeur cool', price:8, imageUrl:'8.jpg'}),
 (debardeur_model1{mid:22, stock:23}),
 (debardeur_model2{mid:23, stock:23}),
 (debardeur_model1)-[:DE_TAILLE]->(T38),
@@ -181,7 +181,7 @@ CREATE
 (debardeur)-[:DE_MARQUE]->(topshop),
 
 (maje {name:'Maje'}),
-(tailleur {id:7, name:'Tailleur', description:'Jupe tailleur habillée', price:50, imageUrl:'9.jpg'}),
+(tailleur {id:9, name:'Tailleur', description:'Jupe tailleur habillée', price:50, imageUrl:'9.jpg'}),
 (tailleur_model1{mid:24, stock:23}),
 (tailleur_model2{mid:25, stock:23}),
 (tailleur_model1)-[:DE_TAILLE]->(T36),
