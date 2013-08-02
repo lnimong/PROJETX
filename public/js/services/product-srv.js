@@ -1,9 +1,10 @@
-define(["socketio"], function (socketio) {
+define([
+  'socketio'
+], function (socketio) {
   'use strict';
 
-  function ProductSrv ($window, $http, $rootScope) {
-
-    var socket = socketio.connect().socket;
+  function ProductSrv ($rootScope, $window, $http) {
+    var availabilitySocket = socketio.connect().socket.of('availability');
 
     this.getProduct = function (id) {
       var _this = this;
@@ -20,7 +21,7 @@ define(["socketio"], function (socketio) {
               product.stock = stock.stock;
               product.modelId = stock.modelId;
               return product;
-          });
+            });
         });
     };
 
@@ -47,15 +48,14 @@ define(["socketio"], function (socketio) {
     };
 
     this.subscribeToAvailability = function (product) {
-      
-      socket.of('availability').on('productAvailable:'+product.modelId, function (product) {
+      availabilitySocket.on('productAvailable:' + product.modelId, function (product) {
         $rootScope.$broadcast('productSrv:productAvailable', product);
         $rootScope.$apply();
       });
-    }
+    };
 	}
 
-  ProductSrv.$inject = [ '$window', '$http', '$rootScope' ];
+  ProductSrv.$inject = [ '$rootScope', '$window', '$http' ];
 
   return ProductSrv;
 });

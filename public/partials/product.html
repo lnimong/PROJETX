@@ -27,8 +27,14 @@
           </span>
         </div>
         <div ng-switch on="product.stock">
-          <input ng-switch-default type="submit" ng-click="addToCart()" class="btn btn-primary" value="Ajouter" />
-          <input ng-switch-when="0" type="submit" ng-click="subscribeToAvailability()" class="btn" value="Me prévenir" />
+          <button class="btn btn-primary" ng-switch-default ng-click="addToCart()">Ajouter</button>
+
+          <div ng-switch-when="0" ng-init="subscribed = false">
+            <button class="btn"
+                    ng-click="subscribeToAvailability(); subscribed = true"
+                    ng-disabled="subscribed">Me prévenir</button>
+            <i class="icon-ok" ng-show="subscribed"></i>
+          </div>
         </div>
       </form>
     </div>
