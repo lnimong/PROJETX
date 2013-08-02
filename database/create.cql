@@ -38,13 +38,13 @@ CREATE
 (T41{name:'41'}),
 (T42{name:'42'}),
 
-(noir{name:'Noir'}),
-(rouge{name:'Rouge'}),
-(bleu_ciel{name:'Bleu ciel'}),
-(bleu{name:'Bleu'}),
-(orange{name:'Orange'}),
-(marron{name:'Marron'}),
-(brut{name:'Marron'}),
+(noir{hexa:'000000'}),
+(rouge{hexa:'FF0000'}),
+(bleu_ciel{hexa:'8DB6CD'}),
+(bleu{hexa:'0000FF'}),
+(orange{hexa:'FFA500'}),
+(marron{hexa:'A52A2A'}),
+(brut{hexa:'800000'}),
 
 
 (addidas {name:'Addidas'}),
