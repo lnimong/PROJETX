@@ -18,7 +18,7 @@ exports.getProduct = function (id, onResults) {
 exports.getProductStock = function (id, color, size, onResults) {
             db.query("START product=node:node_auto_index(id={id})"+ 
                 "MATCH (product)-[:DE_MODELE]->(modele)-[?:DE_TAILLE]->(taille),(product)-[:DE_MODELE]->(modele)-[?:DE_COULEUR]->(couleur)"+
-                "WHERE couleur.name={color} and taille.name={size} RETURN DISTINCT modele.mid as modelId, modele.stock as stock", {id:id, color:color, size:size}, onResults);
+                "WHERE couleur.hexa={color} and taille.name={size} RETURN DISTINCT modele.mid as modelId, modele.stock as stock", {id:id, color:color, size:size}, onResults);
 };
 
 exports.getSuggestions = function (modelId, onResults) { 
