@@ -15,7 +15,7 @@ define([
           $window.alert('Oups: ' + status);
         })
         .then(function (response) {
-          var product = response.data[0];
+          var product = response.data;
           return _this.getProductStock(product.id, product.sizes[0], product.colors[0])
             .then(function (stock) {
               product.stock = stock.stock;

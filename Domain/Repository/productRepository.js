@@ -12,14 +12,16 @@ exports.getAllProducts = function (onResults) {
 };
 
 exports.getProduct = function (id, onResults) {
-            db.query(getProduct, {id: id}, onResults);
+            db.query(getProduct, {id: id}, function(err, products) {
+                onResults(err, products[0]);
+            });
 };
 
 exports.getProductStock = function (id, color, size, onResults) {
         db.query("START product=node:node_auto_index(id={id})"+ 
             "MATCH (product)-[:DE_MODELE]->(modele)-[?:DE_TAILLE]->(taille),(product)-[:DE_MODELE]->(modele)-[?:DE_COULEUR]->(couleur)"+
-            "WHERE couleur.hexa={color} and taille.name={size} RETURN DISTINCT modele.mid as modelId, modele.stock as stock", {id:id, color:color, size:size}, function(err, data) {
-                onResults(err, data[0]);
+            "WHERE couleur.hexa={color} and taille.name={size} RETURN DISTINCT modele.mid as modelId, modele.stock as stock", {id:id, color:color, size:size}, function(err, productstocks) {
+                onResults(err, productstocks[0]);
             });
 };
 
